@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./framework/reset.css" />
+  <link rel="stylesheet" href="./framework/vars.css" />
+  <link rel="stylesheet" href="./framework/fonts.css" />
+  <link rel="stylesheet" href="./framework/index.css" />
+</head>
+
+<body>
+  <form class="form">
+    <h5>Radio</h5>
+
+    <div class="form-group grid-2">
+      <div class="form-radio">
+        <input type="radio" name="my-radio" id="radio-1" checked />
+
+        <label for="radio-1">
+          <i class="icon-cross"></i>
+
+          <span>Radio 1</span>
+        </label>
+      </div>
+
+      <div class="form-radio">
+        <input type="radio" name="my-radio" id="radio-2" disabled />
+
+        <label for="radio-2">
+          <i class="icon-cross"></i>
+
+          <span>Radio 2 disabled</span>
+        </label>
+      </div>
+
+      <div class="form-radio">
+        <input type="radio" name="my-radio" id="radio-3" />
+
+        <label for="radio-3">
+          <i class="icon-cross"></i>
+
+          <span>Radio 3</span>
+        </label>
+      </div>
+
+      <div class="form-radio">
+        <input type="radio" name="my-radio" id="radio-4" />
+
+        <label for="radio-4">
+          <i class="icon-cross"></i>
+
+          <span>Radio 4</span>
+        </label>
+      </div>
+    </div>
+
+    <h5>Checkbox</h5>
+
+    <div class="form-group grid-2">
+      <div class="form-checkbox">
+        <input type="checkbox" name="my-checkbox" id="checkbox-1" checked />
+
+        <label for="checkbox-1">
+          <i class="icon-check"></i>
+
+          <span>Checkbox 1</span>
+        </label>
+      </div>
+
+      <div class="form-checkbox">
+        <input type="checkbox" name="my-checkbox" id="checkbox-2" disabled />
+
+        <label for="checkbox-2">
+          <i class="icon-check"></i>
+
+          <span>Checkbox 2 disabled</span>
+        </label>
+      </div>
+
+      <div class="form-checkbox">
+        <input type="checkbox" name="my-checkbox" id="checkbox-3" />
+
+        <label for="checkbox-3">
+          <i class="icon-check"></i>
+
+          <span>Checkbox 3</span>
+        </label>
+      </div>
+
+      <div class="form-checkbox">
+        <input type="checkbox" name="my-checkbox" id="checkbox-4" />
+
+        <label for="checkbox-4">
+          <i class="icon-check"></i>
+
+          <span>Checkbox 4</span>
+        </label>
+      </div>
+    </div>
+
+    <h5>Select</h5>
+
+    <div class="form-group grid-2">
+      <div class="form-select">
+        <select name="my-select-1">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+        </select>
+      </div>
+
+      <div class="form-select">
+        <select name="my-select-1">
+          <option value="">1</option>
+          <option value="">2</option>
+          <option value="">3</option>
+        </select>
+      </div>
+    </div>
+
+    <h5>Text field</h5>
+
+    <div class="form-group grid-2">
+      <div class="form-text">
+        <label for="text-1">Text field with basic label</label>
+
+        <input type="text" name="my-text" id="text-1" />
+      </div>
+
+      <div class="form-text">
+        <label for="text-2">Text field with basic label disabled</label>
+
+        <input type="text" name="my-text" id="text-2" disabled />
+      </div>
+
+      <div class="form-text has-label">
+        <input type="text" name="my-text" id="text-label-1" />
+
+        <label for="text-label-1">Text field with stylish label</label>
+      </div>
+
+      <div class="form-text has-label">
+        <input type="text" name="my-text" id="text-label-2" disabled />
+
+        <label for="text-label-2">Text field with stylish label disabled</label>
+      </div>
+
+      <div class="form-text has-icon">
+        <input type="text" name="my-text" id="text-icon-1" />
+
+        <label for="text-icon-1"><i class="icon-search"></i></label>
+      </div>
+
+      <div class="form-text has-icon">
+        <input type="text" name="my-text" id="text-icon-2" disabled />
+
+        <label for="text-icon-2"><i class="icon-search"></i></label>
+      </div>
+    </div>
+
+    <h5>Range</h5>
+
+    <div class="form-group grid-1">
+      <div class="form-range">
+        <label for="range-2">Range with label</label>
+
+        <input type="range" min="1" max="100" step="1" name="my-range" id="range-1" />
+      </div>
+
+      <div class="form-range">
+        <label for="range-2">Range with label disabled</label>
+
+        <input type="range" min="1" max="100" step="1" name="my-range" id="range-2" disabled />
+      </div>
+    </div>
+
+    <h5>Button</h5>
+
+    <div class="form-group grid-2">
+      <div class="form-button">
+        <button>
+          <i class="icon-search"></i>
+
+          <span>Button</span>
+        </button>
+      </div>
+
+      <div class="form-button">
+        <button disabled>
+          <i class="icon-search"></i>
+
+          <span>Button disabled</span>
+        </button>
+      </div>
+    </div>
+
+    <h5>Text field</h5>
+
+    <div class="form-group grid-2">
+      <div class="form-textarea">
+        <label for="textarea-1">Text field with basic label</label>
+
+        <textarea name="my-textarea" id="textarea-1"></textarea>
+      </div>
+
+      <div class="form-textarea">
+        <label for="textarea-2">Text field with basic label disabled</label>
+
+        <textarea name="my-textarea" id="textarea-2" disabled></textarea>
+      </div>
+
+      <div class="form-textarea has-label">
+        <textarea name="my-textarea" id="textarea-3"></textarea>
+
+        <label for="textarea-3">Text field with stylish label</label>
+      </div>
+
+      <div class="form-textarea has-label">
+        <textarea name="my-textarea" id="textarea-4" disabled></textarea>
+
+        <label for="textarea-4">Text field with stylish label</label>
+      </div>
+
+      <div class="form-textarea has-icon">
+        <textarea name="my-textarea" id="textarea-5"></textarea>
+
+        <label for="text-icon-2"><i class="icon-search"></i></label>
+      </div>
+
+      <div class="form-textarea has-icon">
+        <textarea name="my-textarea" id="textarea-6" disabled></textarea>
+
+        <label for="text-icon-2"><i class="icon-search"></i></label>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
