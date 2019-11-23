@@ -1,8 +1,8 @@
 :root {
-  --color-primary-light: #e91e63;
-  --color-primary-dark: #c2185b;
-  --color-secondary-light: #03a9f4;
-  --color-secondary-dark: #0288d1;
+  --color-primary-light: #03a9f4;
+  --color-primary-dark: #0288d1;
+  --color-secondary-light: #e91e63;
+  --color-secondary-dark: #c2185b;
 
   --color-transparent: rgba(0, 0, 0, 0);
 
@@ -33,6 +33,10 @@
   --box-shadow-sm: 0px 0px 4px rgba(0, 0, 0, 0.1);
   --box-shadow-md: 0px 0px 4px rgba(0, 0, 0, 0.2);
   --box-shadow-lg: 0px 0px 4px rgba(0, 0, 0, 0.3);
+
+  --box-shadow-inset-sm: 0px 0px 4px inset rgba(0, 0, 0, 0.1);
+  --box-shadow-inset-md: 0px 0px 4px inset rgba(0, 0, 0, 0.2);
+  --box-shadow-inset-lg: 0px 0px 4px inset rgba(0, 0, 0, 0.3);
 
   --fade-dark-sm: rgba(0, 0, 0, 0.1);
   --fade-dark-md: rgba(0, 0, 0, 0.2);

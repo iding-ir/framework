@@ -176,10 +176,6 @@ h6 {
 
 /* ------------- checkbox and radio ------------- */
 
-.form-radio,
-.form-checkbox {
-}
-
 .form-radio input,
 .form-checkbox input {
   display: none;
@@ -196,6 +192,7 @@ h6 {
 
 .form-radio input:disabled ~ label,
 .form-checkbox input:disabled ~ label {
+  color: var(--color-grey-lg);
   cursor: default;
 }
 
@@ -205,7 +202,8 @@ h6 {
   width: var(--icon-sm);
   margin-right: var(--padding-sm);
   background-color: var(--color-lighter);
-  border: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
+  box-shadow: var(--box-shadow-md);
   transition: all var(--transition-sm);
 }
 
@@ -253,14 +251,14 @@ h6 {
 .form-checkbox input:checked ~ label i::before,
 .form-radio input[checked="checked"] ~ label i::before,
 .form-checkbox input[checked="checked"] ~ label i::before {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-secondary-light);
 }
 
 .form-radio input:checked ~ label:hover i::before,
 .form-checkbox input:checked ~ label:hover i::before,
 .form-radio input[checked="checked"] ~ label:hover i::before,
 .form-checkbox input[checked="checked"] ~ label:hover i::before {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-secondary-dark);
 }
 
 /* ------------- text ------------- */
@@ -269,7 +267,7 @@ h6 {
 .form-textarea {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .form-text input,
@@ -278,8 +276,9 @@ h6 {
   line-height: var(--icon-md);
   padding: 0 var(--padding-md);
   background-color: var(--color-lighter);
-  border: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
   border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-md);
   transition: all var(--transition-sm);
 }
 
@@ -297,7 +296,7 @@ h6 {
 .form-textarea textarea:focus {
   outline: none;
   background-color: var(--color-lighter);
-  border: var(--border-thickness) solid var(--color-primary-light);
+  border: var(--border-thickness) solid var(--color-secondary-light);
 }
 
 .form-text.has-icon input,
@@ -328,6 +327,7 @@ h6 {
 
 .form-text input:disabled ~ label,
 .form-textarea textarea:disabled ~ label {
+  color: var(--color-grey-lg);
   cursor: default;
 }
 
@@ -335,18 +335,20 @@ h6 {
 .form-textarea.has-icon textarea ~ label {
   bottom: 0;
   width: var(--icon-md);
-  border-right: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  background-color: var(--color-light);
   transition: all var(--transition-sm);
 }
 
 .form-text.has-icon input:disabled ~ label,
 .form-textarea.has-icon textarea:disabled ~ label {
-  border-right: var(--border-thickness) solid var(--color-grey-md);
+  border: var(--border-thickness) solid var(--color-grey-md);
 }
 
 .form-text.has-icon input:focus ~ label,
 .form-textarea.has-icon textarea:focus ~ label {
-  border-right: var(--border-thickness) solid var(--color-primary-light);
+  border: var(--border-thickness) solid var(--color-secondary-light);
 }
 
 .form-text.has-label input ~ label,
@@ -355,18 +357,20 @@ h6 {
   height: var(--icon-md);
   line-height: var(--icon-md);
   padding: 0 var(--padding-md);
-  border-bottom: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background-color: var(--color-light);
   transition: all var(--transition-sm);
 }
 
 .form-text.has-label input:disabled ~ label,
 .form-textarea.has-label textarea:disabled ~ label {
-  border-bottom: var(--border-thickness) solid var(--color-grey-md);
+  border: var(--border-thickness) solid var(--color-grey-md);
 }
 
 .form-text.has-label input:focus ~ label,
 .form-textarea.has-label textarea:focus ~ label {
-  border-bottom: var(--border-thickness) solid var(--color-primary-light);
+  border: var(--border-thickness) solid var(--color-secondary-light);
 }
 
 .form-text.has-icon input ~ label i,
@@ -380,12 +384,12 @@ h6 {
 
 .form-text.has-icon input ~ label i::before,
 .form-textarea.has-icon textarea ~ label i::before {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .form-text.has-icon input:focus ~ label i::before,
 .form-textarea.has-icon textarea:focus ~ label i::before {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-secondary-dark);
 }
 
 .form-text.has-icon input:disabled ~ label i::before,
@@ -397,7 +401,7 @@ h6 {
 
 .form-range {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .form-range input {
@@ -405,9 +409,9 @@ h6 {
   height: var(--border-thickness);
   padding: 0;
   margin: calc(var(--icon-sm) / 2) 0;
-  background-color: var(--color-secondary-light);
-  /* border: var(--border-thickness) solid var(--color-grey-md); */
+  background-color: var(--color-primary-light);
   border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-md);
   cursor: pointer;
   appearance: none;
   --mox-appearance: none;
@@ -416,14 +420,15 @@ h6 {
 }
 
 .form-range input:focus {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-secondary-light);
 }
 
 .form-range input:disabled {
   background-color: var(--color-grey-md);
 }
 
-.form-range label {
+.form-range input:disabled ~ label {
+  color: var(--color-grey-lg);
 }
 
 .form-range input::-webkit-slider-thumb,
@@ -435,7 +440,7 @@ h6 {
   background-size: 50%;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMTAwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48cGF0aCBpZD0iTGF5ZXIxXzBfMV9TVFJPS0VTIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgZmlsbD0ibm9uZSIgZD0iTSAyNSA5MEwgNzUgOTBNIDI1IDEwTCA3Ny41IDEwTSA5NSA1MEwgNSA1MCIvPjwvZGVmcz48ZyB0cmFuc2Zvcm09Im1hdHJpeCggMSwgMCwgMCwgMSwgMCwwKSAiPjx1c2UgeGxpbms6aHJlZj0iI0xheWVyMV8wXzFfU1RST0tFUyIvPjwvZz48L3N2Zz4=);
   background-color: var(--color-lighter);
-  border: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
   border-radius: 50%;
   transition: all var(--transition-sm);
   cursor: pointer;
@@ -447,7 +452,7 @@ h6 {
 .form-range input:hover::-webkit-slider-thumb,
 .form-range input:hover::-moz-range-thumb {
   background-color: var(--color-light);
-  border: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
 }
 
 .form-range input:disabled::-webkit-slider-thumb,
@@ -458,7 +463,7 @@ h6 {
 
 .form-range input:focus::-webkit-slider-thumb,
 .form-range input:focus::-moz-range-thumb {
-  border: var(--border-thickness) solid var(--color-primary-light);
+  border: var(--border-thickness) solid var(--color-secondary-light);
 }
 
 /* ------------- button ------------- */
@@ -471,8 +476,9 @@ h6 {
   font-size: 1.1rem;
   text-align: center;
   background-color: var(--color-light);
-  border: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
   border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-md);
   transition: all var(--transition-sm);
   overflow: hidden;
   cursor: pointer;
@@ -480,10 +486,11 @@ h6 {
 
 .form-button button:hover {
   background-color: var(--color-lighter);
-  border: var(--border-thickness) solid var(--color-primary-light);
+  border: var(--border-thickness) solid var(--color-secondary-light);
 }
 
 .form-button button:disabled {
+  color: var(--color-grey-lg);
   background-color: var(--color-grey-sm);
   border: var(--border-thickness) solid var(--color-grey-md);
   cursor: default;
@@ -502,12 +509,12 @@ h6 {
   width: var(--icon-lg);
   height: var(--icon-lg);
   margin-right: var(--padding-sm);
-  border-right: var(--border-thickness) solid var(--color-secondary-light);
+  border-right: var(--border-thickness) solid var(--color-primary-light);
   transition: all var(--transition-sm);
 }
 
 .form-button button:hover i {
-  border-right: var(--border-thickness) solid var(--color-primary-light);
+  border-right: var(--border-thickness) solid var(--color-secondary-light);
 }
 
 .form-button button:disabled i {
@@ -515,11 +522,11 @@ h6 {
 }
 
 .form-button button i::before {
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .form-button button:hover i::before {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-secondary-dark);
 }
 
 .form-button button:disabled i::before {
@@ -542,8 +549,9 @@ h6 {
   background-size: 1rem;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMTAwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48cGF0aCBpZD0iTGF5ZXIxXzBfMV9TVFJPS0VTIiBzdHJva2U9InJnYmEoMTM3LCAxMzcsIDEzNywgMC42MCkiIHN0cm9rZS13aWR0aD0iMTAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBmaWxsPSJub25lIiBkPSJNIDUgMjkuOUwgNTAuMDUgNzQuOTUgOTUuMSAyOS45Ii8+PC9kZWZzPjxnIHRyYW5zZm9ybT0ibWF0cml4KCAxLCAwLCAwLCAxLCAwLDApICI+PHVzZSB4bGluazpocmVmPSIjTGF5ZXIxXzBfMV9TVFJPS0VTIi8+PC9nPjwvc3ZnPg==);
   background-color: var(--color-lighter);
-  border: var(--border-thickness) solid var(--color-secondary-light);
+  border: var(--border-thickness) solid var(--color-primary-light);
   border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-md);
   transition: all var(--transition-sm);
   appearance: none;
   --mox-appearance: none;
@@ -554,7 +562,7 @@ h6 {
 .form-select select:focus {
   outline: none;
   background-color: var(--color-lighter);
-  border: var(--border-thickness) solid var(--color-primary-light);
+  border: var(--border-thickness) solid var(--color-secondary-light);
 }
 
 .form-option {
@@ -578,7 +586,7 @@ h6 {
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: 50%;
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-primary-dark);
 }
 
 .icon-search::before {
@@ -627,7 +635,7 @@ caption {
 }
 
 thead {
-  border-bottom: var(--border-thickness) solid var(--color-secondary-light);
+  border-bottom: var(--border-thickness) solid var(--color-primary-light);
   background-color: var(--color-light);
 }
 
