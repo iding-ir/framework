@@ -38,7 +38,7 @@ html {
 body {
   position: relative;
   color: var(--color-dark);
-  background-color: var(--color-light);
+  background-color: var(--color-lighter);
 }
 
 body * {
@@ -198,8 +198,12 @@ h6 {
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: 50%;
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-dark);
   transition: all var(--transition-sm);
+}
+
+[class*="sc-icon-"]:hover::before {
+  background-color: var(--color-secondary-dark);
 }
 
 .sc-icon-checkbox::before {
@@ -244,7 +248,7 @@ h6 {
 }
 
 .sc-form-group {
-  border-bottom: 1px solid var(--color-grey-sm);
+  border-bottom: 1px solid var(--fade-grey-sm);
   padding-bottom: var(--padding-md);
   margin-bottom: var(--padding-md);
 }
@@ -272,7 +276,7 @@ h6 {
 
 .sc-form-radio input:disabled ~ label,
 .sc-form-checkbox input:disabled ~ label {
-  color: var(--color-grey-lg);
+  color: var(--fade-grey-lg);
   cursor: not-allowed;
 }
 
@@ -297,9 +301,19 @@ h6 {
   border-radius: var(--border-radius);
 }
 
+.sc-form-radio input:not(:disabled) ~ label:hover i,
+.sc-form-checkbox input:not(:disabled) ~ label:hover i {
+  background-color: var(--color-light);
+}
+
 .sc-form-radio input:disabled ~ label i,
 .sc-form-checkbox input:disabled ~ label i {
-  border-color: var(--color-grey-md);
+  border-color: var(--fade-grey-md);
+}
+
+.sc-form-radio input:disabled ~ label:hover i,
+.sc-form-checkbox input:disabled ~ label:hover i {
+  background-color: var(--color-transparent);
 }
 
 .sc-form-radio input ~ label i::before,
@@ -309,7 +323,7 @@ h6 {
 
 .sc-form-radio input:not(:disabled) ~ label:hover i::before,
 .sc-form-checkbox input:not(:disabled) ~ label:hover i::before {
-  background-color: var(--color-grey-md);
+  background-color: var(--fade-grey-md);
 }
 
 .sc-form-radio input:checked ~ label i::before,
@@ -326,11 +340,16 @@ h6 {
   background-color: var(--color-secondary-dark);
 }
 
+.sc-form-radio input:disabled ~ label i::before,
+.sc-form-checkbox input:disabled ~ label i::before {
+  background-color: var(--color-transparent);
+}
+
 .sc-form-radio input:disabled:checked ~ label i::before,
 .sc-form-checkbox input:disabled:checked ~ label i::before,
 .sc-form-radio input:disabled[checked="checked"] ~ label i::before,
 .sc-form-checkbox input:disabled[checked="checked"] ~ label i::before {
-  background-color: var(--color-grey-md);
+  background-color: var(--fade-grey-md);
 }
 
 /* ------------- text ------------- */
@@ -350,6 +369,7 @@ h6 {
 .sc-form-text input,
 .sc-form-textarea textarea {
   width: 100%;
+  color: var(--color-dark);
   background-color: var(--color-lighter);
   border: var(--border-thickness) solid var(--color-primary-light);
   border-radius: var(--border-radius);
@@ -381,7 +401,7 @@ h6 {
 
 .sc-form-text input:disabled,
 .sc-form-textarea textarea:disabled {
-  border-color: var(--color-grey-md);
+  border-color: var(--fade-grey-md);
   cursor: not-allowed;
 }
 
@@ -433,7 +453,7 @@ h6 {
 
 .sc-form-text input:disabled ~ label,
 .sc-form-textarea textarea:disabled ~ label {
-  color: var(--color-grey-lg);
+  color: var(--fade-grey-lg);
   cursor: not-allowed;
 }
 
@@ -441,22 +461,22 @@ h6 {
 .sc-form-text.sc-has-label input:disabled ~ label,
 .sc-form-textarea.sc-has-icon textarea:disabled ~ label,
 .sc-form-textarea.sc-has-label textarea:disabled ~ label {
-  background-color: var(--color-grey-sm);
-  border-color: var(--color-grey-md);
+  background-color: var(--color-light);
+  border-color: var(--fade-grey-md);
 }
 
-.sc-form-text.sc-has-icon input ~ label:hover,
-.sc-form-text.sc-has-label input ~ label:hover,
-.sc-form-textarea.sc-has-icon textarea ~ label:hover,
-.sc-form-textarea.sc-has-label textarea ~ label:hover {
-  background-color: var(--color-grey-sm);
+.sc-form-text.sc-has-icon input:not(:disabled) ~ label:hover,
+.sc-form-text.sc-has-label input:not(:disabled) ~ label:hover,
+.sc-form-textarea.sc-has-icon textarea:not(:disabled) ~ label:hover,
+.sc-form-textarea.sc-has-label textarea:not(:disabled) ~ label:hover {
+  background-color: var(--fade-dark-sm);
 }
 
 .sc-form-text.sc-has-icon input:focus ~ label,
 .sc-form-text.sc-has-label input:focus ~ label,
 .sc-form-textarea.sc-has-icon textarea:focus ~ label,
 .sc-form-textarea.sc-has-label textarea:focus ~ label {
-  background-color: var(--color-grey-sm);
+  background-color: var(--fade-dark-sm);
   border-color: var(--color-secondary-light);
 }
 
@@ -476,7 +496,7 @@ h6 {
 
 .sc-form-text.sc-has-icon input:disabled ~ label i::before,
 .sc-form-textarea.sc-has-icon textarea:disabled ~ label i::before {
-  background-color: var(--color-grey-lg);
+  background-color: var(--fade-grey-lg);
 }
 
 .sc-form-text.sc-has-icon input:focus ~ label i::before,
@@ -509,8 +529,8 @@ h6 {
 }
 
 .sc-form-select select:disabled {
-  background-color: var(--color-grey-sm);
-  border: var(--border-thickness) solid var(--color-grey-md);
+  background-color: var(--color-light);
+  border: var(--border-thickness) solid var(--fade-grey-md);
   cursor: not-allowed;
 }
 
@@ -546,7 +566,7 @@ h6 {
 }
 
 .sc-form-range input:disabled {
-  background-color: var(--color-grey-md);
+  background-color: var(--fade-grey-md);
   cursor: not-allowed;
 }
 
@@ -555,7 +575,7 @@ h6 {
 }
 
 .sc-form-range input:disabled ~ label {
-  color: var(--color-grey-lg);
+  color: var(--fade-grey-lg);
 }
 
 .sc-form-range input::-webkit-slider-thumb,
@@ -584,7 +604,7 @@ h6 {
 .sc-form-range input:disabled::-webkit-slider-thumb,
 .sc-form-range input:disabled::-moz-range-thumb {
   background-color: var(--color-grey-sm);
-  border-color: var(--color-grey-md);
+  border-color: var(--color-grey-mg);
   cursor: not-allowed;
 }
 
@@ -604,7 +624,7 @@ h6 {
   font-size: 1.1rem;
   font-weight: 400 !important;
   line-height: var(--icon-lg);
-  height: var(--icon-lg);
+  /* height: var(--icon-lg); */
   background-color: var(--color-light);
   border: var(--border-thickness) solid var(--color-primary-light);
   border-radius: var(--border-radius);
@@ -620,14 +640,14 @@ h6 {
 }
 
 .sc-form-button button:disabled {
-  color: var(--color-grey-lg);
-  background-color: var(--color-grey-sm);
-  border: var(--border-thickness) solid var(--color-grey-md);
+  color: var(--fade-grey-lg);
+  background-color: var(--color-light);
+  border: var(--border-thickness) solid var(--fade-grey-md);
   cursor: not-allowed;
 }
 
 .sc-form-button button:not(:disabled):hover {
-  background-color: var(--color-grey-sm);
+  background-color: var(--fade-dark-sm);
   border: var(--border-thickness) solid var(--color-secondary-light);
 }
 
@@ -665,16 +685,16 @@ h6 {
 }
 
 .sc-form-button button:disabled i::before {
-  background-color: var(--color-grey-lg);
+  background-color: var(--fade-grey-lg);
 }
 
 /* ------------- table ------------- */
 
 .sc-table {
   width: 100%;
+  background-color: var(--color-lighter);
   border-collapse: separate;
-  border: var(--border-thickness) solid var(--color-primary-light);
-  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 .sc-table caption {
@@ -684,25 +704,23 @@ h6 {
 }
 
 .sc-table thead {
-  border-bottom: var(--border-thickness) solid var(--color-primary-light);
-  background-color: var(--color-light);
   box-shadow: inset 0 calc(-1 * var(--border-thickness)) 0
     var(--color-primary-light);
+  /* background-color: var(--fade-grey-sm); */
+}
+
+.sc-table thead tr {
 }
 
 .sc-table tbody {
-  background-color: var(--color-lighter);
 }
 
-.sc-table tr {
-}
-
-.sc-table tr:nth-of-type(2n + 1) {
-  background-color: var(--color-transparent);
-}
-
-.sc-table tr:nth-of-type(2n) {
+.sc-table tbody tr:nth-of-type(2n + 1) {
   background-color: var(--fade-dark-sm);
+}
+
+.sc-table tbody tr:nth-of-type(2n) {
+  background-color: var(--color-transparent);
 }
 
 .sc-table th,
@@ -745,7 +763,7 @@ h6 {
 
 .sc-card .sc-card-header {
   padding: var(--padding-md) 0;
-  border-bottom: 1px solid var(--fade-dark-md);
+  border-bottom: var(--border-thickness) solid var(--fade-dark-md);
 }
 
 .sc-card .sc-card-body {
@@ -754,7 +772,7 @@ h6 {
 
 .sc-card .sc-card-footer {
   padding: var(--padding-md) 0;
-  border-top: 1px solid var(--fade-dark-md);
+  border-top: var(--border-thickness) solid var(--fade-dark-md);
 }
 
 /* ------------- slide ------------- */
@@ -793,7 +811,7 @@ h6 {
 .sc-slide .sc-slide-header {
   position: relative;
   padding: var(--padding-md) 0;
-  border-bottom: 1px solid var(--fade-dark-md);
+  border-bottom: var(--border-thickness) solid var(--fade-dark-md);
 }
 
 .sc-slide h1,
@@ -829,5 +847,5 @@ h6 {
 
 .sc-slide .sc-slide-footer {
   padding: var(--padding-md) 0;
-  border-top: 1px solid var(--fade-dark-md);
+  border-top: var(--border-thickness) solid var(--fade-dark-md);
 }
